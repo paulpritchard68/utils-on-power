@@ -2,7 +2,6 @@
       *------------------------------------------------------------------------*
       * Program     : DSPOSRLS                                                 *
       * Description : Display current OS release                               *
-      *               Displays the current OS release                          *
       * Written by  : Paul Pritchard                                           *
       *                                                                        *
       * DSPOSRLS is free software: you can redistribute it and/or modify it    *
