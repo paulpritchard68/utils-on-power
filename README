@@ -1,0 +1,6 @@
+Display OS Release (DSPOSRLS)
+A utility to identify what OS release your IBM i is on.
+
+USAGE
+=====
+Download the source and compile both the RPGLE and the CMD. You can then use the DSPOSRLS command to display your current OS release
