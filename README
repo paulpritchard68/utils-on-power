@@ -1,0 +1,6 @@
+Display Program Locks (DSPPGMLCK)
+An IBM i utility to identify which jobs are using a specific program
+
+USAGE
+=====
+Download the source and compile the DDS, the RPGLE and the CMD. You can then use the DSPPGMLCK command to list all jobs that have the specified program in their call stack.
