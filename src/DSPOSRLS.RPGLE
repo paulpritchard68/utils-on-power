@@ -2,20 +2,9 @@
       *------------------------------------------------------------------------*
       * Program     : DSPOSRLS                                                 *
       * Description : Display current OS release                               *
+      *               Displays the current OS release                          *
       * Written by  : Paul Pritchard                                           *
-      *                                                                        *
-      * DSPOSRLS is free software: you can redistribute it and/or modify it    *
-      * under the terms of the GNU General Public License as published by the  *
-      * Free Software Foundation, either version 3 of the License, or          *
-      * (at your option) any later version.                                    *
-      *                                                                        *
-      * DSPOSRLS is distributed in the hope that it will be useful, but        *
-      * WITHOUT ANY WARRANTY; without even the implied warranty of             *
-      * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.                   *
-      * See the GNU General Public License for more details.                   *
-      *                                                                        *
-      * You should have received a copy of the GNU General Public License      *
-      * along with this program.  If not, see <http://www.gnu.org/licenses/>.  *
+      * Date        :  5/08/2011                                               *
       *------------------------------------------------------------------------*
       * Program Prototype
      D DspOsRls        PR                  EXTPGM('DSPOSRLS')
@@ -25,7 +14,7 @@
      D RetrieveProductInformation...
      D                 PR                  EXTPGM('QSZRTVPR')
      D  ReceiverVariable...
-     D                               27A
+     D                              113A
      D  ReceiverVariableLength...
      D                               10i 0
      D  FormatName                    8A
@@ -43,11 +32,11 @@
      D  LoadID                18     27A   Inz('*CODE')
      D*
      D PRDR0100        DS
-     D  Value                  1     27A
+     D  Value                  1    113A
      D  Release               20     25A
      D*
      D* Other Fields
-     D ValueLength     S             10i 0 Inz(27)
+     D ValueLength     S             10i 0 Inz(113)
      D ValueFormat     S              8A   Inz('PRDR0100')
      D Error           S              8A
       *------------------------------------------------------------------------*

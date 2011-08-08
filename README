@@ -1,6 +1,14 @@
 Display OS Release (DSPOSRLS)
 A utility to identify what OS release your IBM i is on.
 
-USAGE
+To Compile
+==========
+Use the following commands to compile the source, replacing 'library' with the name of the library into which you copied the source.
+
+CRTBNDRPG PGM(library/DSPOSRLS)
+
+CRTCMD CMD(library/DSPOSRLS) PGM(library/DSPOSRLS) 
+
+Usage
 =====
-Download the source and compile both the RPGLE and the CMD. You can then use the DSPOSRLS command to display your current OS release
+Type DSPOSRLS from any command line
