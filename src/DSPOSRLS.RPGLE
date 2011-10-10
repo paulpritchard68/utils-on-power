@@ -22,6 +22,16 @@
      D                               27A
      D  ErrorCode                     8A
      D*
+     D DisplayLongText...
+     D                 PR                  EXTPGM('QUILNGTX')
+     D  TextString                    6A   Const
+     D  TextStringLngth...
+     D                               10i 0 Const
+     D  MessageID                     7A   Const
+     D  MessageFileName...
+     D                               20A   Const
+     D  ErrorCode                     8A
+     D*
      D* Data Structures
      D ProductInformationDs...
      D                 DS
@@ -39,12 +49,16 @@
      D ValueLength     S             10i 0 Inz(113)
      D ValueFormat     S              8A   Inz('PRDR0100')
      D Error           S              8A
+     D MessageID       S              7A   Inz('')
+     D MessageFileName...
+     D                 S             20A   Inz('')
       *------------------------------------------------------------------------*
       /Free
 
           RetrieveProductInformation(Value: ValueLength: ValueFormat:
                                      Information: Error);
-          Dsply Release;
+          DisplayLongText(Release: %len(Release):
+                          MessageID: MessageFileName: Error);
 
           *INLR=*ON;
 
