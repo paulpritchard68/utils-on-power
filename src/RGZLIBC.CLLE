@@ -1,0 +1,38 @@
+/*----------------------------------------------------------------------------*/
+/* Program     : RGZLIBC                                                      */
+/* Description : Reorganise library                                           */
+/*               Reorganises all physical files in a library                  */
+/* Written By  : Paul Pritchard                                               */
+/* Date        : 19/12/2011                                                   */
+/*                                                                            */
+/* RGZLIB is free software: you can redistribute it and/or modify it under    */
+/* the terms of the GNU General Public License as published by the Free       */
+/* Software Foundation, either version 3 of the License, or (at your option)  */
+/* any later version.                                                         */
+/*                                                                            */
+/* RGZLIB is distributed in the hope that it will be useful, but              */
+/* WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY */
+/* or FITNESS FOR A PARTICULAR PURPOSE.                                       */
+/* See the GNU General Public License for more details.                       */
+/*                                                                            */
+/* You should have received a copy of the GNU General Public License          */
+/* along with this program.  If not, see <http://www.gnu.org/licenses/>.      */
+/*----------------------------------------------------------------------------*/
+Pgm parm(&Library)
+Dcl &Library *Char 10
+Dcl &Exit *Char 1
+Dclf RGZLIBF Rcdfmt(QWHFDMBR)
+
+/* The main process loop                                                      */
+Dspfd File(&Library/*ALL) Type(*MBR) Output(*OUTFILE) Outfile(QTEMP/RGZLIBF)
+Chgvar &Exit '0'
+Dowhile Cond(&Exit *EQ '0')
+   Rcvf Rcdfmt(QWHFDMBR)
+   MonMsg MsgId(CPF0000) Exec(Chgvar &Exit '1')
+   If Cond(&Exit *EQ '0' *AND &MBNRCD *GT 0 *AND &MBFTYP *EQ 'P') Then(Do)
+      Rgzpfm File(&MBLIB/&MBFILE) Mbr(&MBNAME)
+      Enddo
+   Enddo
+
+Endpgm
+/*----------------------------------------------------------------------------*/

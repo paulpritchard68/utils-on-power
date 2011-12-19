@@ -1,0 +1,16 @@
+Reorganise Library (RGZLIB)
+A simple command to reorganise all of the physical file members in a selected library.
+
+To Compile
+==========
+Use the following commands to compile the source, replacing ‘library’ with the name of the library into which you copied the source.
+
+CRTBNDCL PGM(library/RGZLIBC)
+
+CRTCMD CMD(library/RGZLIB) PGM(library/RGZLIBC)
+
+Usage
+=====
+For a large library this command can take a while to complete, so it should be submitted to batch unless you have an insanely goo reason to run it interactively. To submit this to batch, type the following where ‘library’ is, of course, the library you want to reorganise.
+
+SBMJOB CMD(RGZLIB LIBRARY(library)) JOB(RGZLIB)
