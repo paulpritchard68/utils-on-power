@@ -1,0 +1,89 @@
+:pnlgrp.
+.************************************************************************
+.*  Help for command RGZLIB
+.************************************************************************
+:help name='RGZLIB'.
+Reorganise Library - Help
+:p.The Reorganise Library (RGZLIB) command will removes deleted records from
+(compresses) all members of all physical files in a selected library.
+:p.:hp2.Notes::ehp2.
+:ul.
+:li.
+If you cancel this command, the system rebuilds any access
+paths that are not maintained during the reorganize. Any
+updates to a physical file member with a unique access path
+over it are prevented until the access path is completely
+rebuilt.
+:eul.
+:p.:hp2.Restrictions::ehp2.
+:ul.
+:li.
+During the reorganization of a physical member, the file being
+reorganized is locked.
+:li.
+You must have object operational authority, object management
+or alter authority, all data authority to all physical files
+in the library, and execute authority to the library.
+.* List all special authorities required to run the command.
+:li.
+In multi-threaded jobs, this command is not threadsafe for
+distributed files and fails for distributed files that use
+relational databases of type *SNA.  This command is also not
+threadsafe and fails for Distributed Data Management (DDM)
+files of type *SNA.
+:eul.
+:ehelp.
+.*******************************************
+.*   Help for parameter LIBRARY
+.*******************************************
+:help name='RGZLIB/LIBRARY'.
+Library (LIBRARY) - Help
+:xh3.Library (LIBRARY)
+:p.Specifies the name of the library containing the physical
+files to be reorganised.
+.* Describe the function provided by the parameter.
+:p.This is a required parameter.
+:parml.
+:pt.:pv.Library:epv.
+:pd.
+Specify the name of the library to be reorganised
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.**************************************************
+.*
+.* Examples for RGZLIB
+.*
+.**************************************************
+:help name='RGZLIB/COMMAND/EXAMPLES'.
+Examples for RGZLIB - Help
+:xh3.Examples for RGZLIB
+:p.:hp2.Example 1: Reorganise a single library:ehp2.
+:xmp.
+RGZLIB  LIBRARY(LIBSALES)
+:exmp.
+:p.This command compresses all members in all physical
+files in library LIBSALES by removing the deleted
+records from the file members.
+:ehelp.
+.**************************************************
+.*
+.* Error messages for RGZLIB
+.*
+.**************************************************
+:help name='RGZLIB/ERROR/MESSAGES'.
+&msg(CPX0005,QCPFMSG). RGZLIB - Help
+:xh3.&msg(CPX0005,QCPFMSG). RGZLIB
+:p.:hp3.*ESCAPE &msg(CPX0006,QCPFMSG).:ehp3.
+.************************************************************************
+.* List the *ESCAPE, *STATUS, and *NOTIFY messages signalled from the command.
+.* The following are generic messages defined in message file QCPFMSG.
+.* Modify this list to match the list of error messages for the command.
+.************************************************************************
+:DL COMPACT.
+:DT.CPF3064
+:DD.&MSG(CPF3064,QCPFMSG,*LIBL,nosub).
+:EDL.
+:ehelp.
+:epnlgrp.
+
