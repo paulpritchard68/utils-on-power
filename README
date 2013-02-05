@@ -3,11 +3,13 @@ A simple command to reorganise all of the physical file members in a selected li
 
 To Compile
 ==========
-Use the following commands to compile the source, replacing ‘library’ with the name of the library into which you copied the source.
+Use the following commands to compile the source, replacing ‘library’ with the name of the library into which you copied the source. 
 
-CRTBNDCL PGM(library/RGZLIBC)
+DSPFD File(library/*ALL) Type(*MBR) Output(*OUTFILE) Outfile(QTEMP/RGZLIBF)
 
-CRTCMD CMD(library/RGZLIB) PGM(library/RGZLIBC)
+CRTBNDCL PGM(library/RGZLIBC) SRCFILE(library/QCLSRC)
+
+CRTCMD CMD(library/RGZLIB) PGM(library/RGZLIBC) SRCFILE(library/QCMDSRC)
 
 Usage
 =====
