@@ -9,7 +9,9 @@ CRTDSPF FILE(library/DSPPGMLCKD) SRCFILE(library/QDDSSRC)
 
 CRTBNDRPG PGM(library/DSPPGMLCKR)
 
-CRTCMD CMD(library/DSPPGMLCK) PGM(library/DSPPGMLCKR) 
+CRTPNLGRP PNLGRP(library/dsppgmlck) SRCFILE(library/QPNLSRC)
+
+CRTCMD CMD(library/dsppgmlck) PGM(*LIBL/dsppgmlckr) SRCFILE(library/QCMDSRC) SRCMBR(*CMD) HLPPNLGRP(dsppgmlck) HLPID(*CMD)                     
 
 Usage
 =====
