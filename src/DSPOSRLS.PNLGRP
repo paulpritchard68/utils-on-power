@@ -1,0 +1,11 @@
+:pnlgrp.
+.************************************************************************
+.*  Help for command DSPOSRLS
+.************************************************************************
+:help name='DSPOSRLS'.
+Display current OS release - Help
+:p.The Display current OS release (DSPOSRLS) command will display the
+current OS release.
+:p.There are no parameters for this command.
+:ehelp.
+:epnlgrp.
