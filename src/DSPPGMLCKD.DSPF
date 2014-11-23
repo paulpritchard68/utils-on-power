@@ -1,0 +1,46 @@
+     A*%%TS  SD  20100614  052722  PPRITCHARD  REL-V6R1M0  5761-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      VLDCMDKEY(25 'VALID COMMAND KEY PRE-
+     A                                      SSED')
+     A                                      CF03(03 'EXIT')
+     A                                      CF12(12 'CANCEL')
+     A          R DSPPGMLCKS                SFL
+     A*%%TS  SD  20100614  052722  PPRITCHARD  REL-V6R1M0  5761-WDS
+     A            SFLJOB        10A  O  7  3
+     A            SFLUSER       10A  O  7 14
+     A          R DSPPGMLCKC                SFLCTL(DSPPGMLCKS)
+     A*%%TS  SD  20100614  052722  PPRITCHARD  REL-V6R1M0  5761-WDS
+     A                                      SETOF(30 'SET OFF ERROR FLAG')
+     A                                      ROLLUP(26 'PAGE DOWN/ROLL UP')
+     A                                      OVERLAY
+     A                                      PRINT
+     A N80N82                               SFLDSP
+     A                                      SFLDSPCTL
+     A  80                                  SFLCLR
+     A  81                                  SFLEND(*MORE)
+     A                                      SFLSIZ(0046)
+     A                                      SFLPAG(0045)
+     A                                      SFLLIN(0002)
+     A            RRN1           4S 0H      SFLRCDNBR(CURSOR)
+     A                                  1 30'Display Program Locks'
+     A                                      DSPATR(HI)
+     A                                  3  3'Jobs using program'
+     A                                      COLOR(BLU)
+     A            CTLPROGRAM    10A  O  3 22COLOR(BLU)
+     A                                  6  3'Job'
+     A                                      DSPATR(HI)
+     A                                  6 14'User'
+     A                                      DSPATR(HI)
+     A                                  6 26'Job'
+     A                                      DSPATR(HI)
+     A                                  6 37'User'
+     A                                      DSPATR(HI)
+     A                                  6 49'Job'
+     A                                      DSPATR(HI)
+     A                                  6 60'User'
+     A                                      DSPATR(HI)
+     A          R DSPPGMLCKT
+     A*%%TS  SD  20100614  042622  PPRITCHARD  REL-V6R1M0  5761-WDS
+     A                                 23  3'F3=Exit  F12=Cancel'
+     A                                      COLOR(BLU)
