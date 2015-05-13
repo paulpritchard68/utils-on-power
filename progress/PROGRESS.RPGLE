@@ -17,7 +17,7 @@
       * You should have received a copy of the GNU General Public License      *
       * along with this program.  If not, see <http://www.gnu.org/licenses/>.  *
       *------------------------------------------------------------------------*
-     fprogressd  cf   e            workstn
+     fprogressd cf   e             workstn
       *------------------------------------------------------------------------*
       * Program Prototype
      dprogress         pr                  extpgm('progress')
