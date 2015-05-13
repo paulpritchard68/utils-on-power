@@ -1,0 +1,16 @@
+     A*%%TS  SD  20150513  094926  EXPATPAUL   REL-V6R1M0  5761-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      VLDCMDKEY(25 'Valid command key')
+     A          R X01
+     A*%%TS  SD  20040830  155339  EXPATPAUL   REL-V5R2M0  5722-WDS
+     A                                      ASSUME
+     A                                      OVERLAY
+     A                                 23  3' '
+     A          R W01
+     A*%%TS  SD  20150513  094926  EXPATPAUL   REL-V6R1M0  5761-WDS
+     A                                      KEEP
+     A                                      INVITE
+     A                                      WINDOW(21 1 2 75)
+     A                                      WDWBORDER((*CHAR '        '))
+     A            PROGBAR       75A  O  1  1
