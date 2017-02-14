@@ -1,4 +1,3 @@
-     H DFTACTGRP(*NO)
       *------------------------------------------------------------------------*
       * Program     : DSPPGMLCK                                                *
       * Description : Display program locks                                    *
@@ -6,18 +5,21 @@
       *               stack                                                    *
       * Written by  : Paul Pritchard                                           *
       *------------------------------------------------------------------------*
+     h main(DSPPGMLCK)
+     h dftactgrp(*no) actgrp(*new)
+
      FDSPPGMLCKDCF   E             WORKSTN sfile(DSPPGMLCKS:RRN1)
       *------------------------------------------------------------------------*
       * Program Prototype
      D DspPgmLck       PR                  EXTPGM('DSPPGMLCKR')
      D  ProgramName                  10A
-     D DspPgmLck       PI
-     D  ProgramName                  10A
      D*
      D* Internal Prototypes
      D BuildJobList    PR
+     D  ProgramName                  10A
      D*
      D DisplayJobList  PR
+     D  ProgramName                  10A
      D*
      D* External Prototypes
      D CreateUserSpace...
@@ -95,20 +97,25 @@
      D  LockingUser...
      D                        11     20A
       *------------------------------------------------------------------------*
+     P DspPgmLck       b
+     D DspPgmLck       PI
+     D  ProgramName                  10A
       /Free
 
-          BuildJobList();
-          DisplayJobList();
+          BuildJobList(ProgramName);
+          DisplayJobList(ProgramName);
 
           // And exit
           *INLR=*ON;
 
       /End-free
+     P DspPgmLck       e
       *------------------------------------------------------------------------*
       * Procedure: Build Job List                                              *
       *------------------------------------------------------------------------*
      P BuildJobList    B
      D BuildJobList    PI
+     D  ProgramName                  10A
      D*
      D* API Fields
      D JobUserSpace    S             20A
@@ -302,6 +309,7 @@
       *------------------------------------------------------------------------*
      P DisplayJobList  B
      D DisplayJobList  PI
+     D  ProgramName                  10A
      D*
      D k               S             10i 0
      D*

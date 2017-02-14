@@ -1,24 +1,19 @@
-     h
-      *------------------------------------------------------------------------*
-      * Program     : PROGRESS                                                 *
-      * Description : Display a progress bar                                   *
-      * Written by  : Paul Pritchard                                           *
-      *------------------------------------------------------------------------*
+     h main(progress)
+
      fprogressd cf   e             workstn
-      *------------------------------------------------------------------------*
-      * Program Prototype
-     dprogress         pr                  extpgm('progress')
+
+     dprogress         pr                  extpgm('PROGRESS')
      d current                        9s 0 const
      d maximum                        9s 0 const
+
+     pprogress         b
      dprogress         pi
      d current                        9s 0 const
      d maximum                        9s 0 const
-     
-      * Other fields
      dlength           s              3s 0
      di                s              3s 0
       /free
-          progbar = *Blanks;
+          fld001 = *Blanks;
 
           if current>=maximum;
               length = 75;
@@ -29,12 +24,10 @@
 
           if length>*Zero;
               for i = 1 to length;
-                  %subst(progbar: i: 1)='#';
+                  %subst(fld001: i: 1)='#';
               endfor;
           endif;
-
           write W01;
           return;
-
       /end-free
-      *------------------------------------------------------------------------*
+     pprogress         e
