@@ -4,4 +4,4 @@ Script to copy stream files from IFS to source members
 
 Another Command: SNDSPLF
 ========================
-Copy a spool file to a DB member and then send it to an FTP server
+Copy a spool file to a DB member and then send it to an FTP server (Started)
